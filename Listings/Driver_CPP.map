@@ -4,9 +4,15 @@ Component: Arm Compiler for Embedded 6.19 Tool: armlink [5e73cb00]
 
 Section Cross References
 
-    main.o(.text.main) refers to main.o(.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb) for Driver::GPIO::GPIO_bus_enable(Driver::Structures::e_gpio_port_t, bool)
-    main.o(.text.main) refers to main.o(.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE) for Driver::GPIO::GPIO_set_direction(Driver::Structures::e_gpio_port_t, unsigned char, Driver::Structures::e_gpio_direction_t)
+    main.o(.text.main) refers to driver_gpio.o(.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb) for Driver::GPIO::GPIO_bus_enable(Driver::Structures::e_gpio_port_t, bool)
+    main.o(.text.main) refers to driver_gpio.o(.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE) for Driver::GPIO::GPIO_set_direction(Driver::Structures::e_gpio_port_t, unsigned char, Driver::Structures::e_gpio_direction_t)
     main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
+    driver_gpio.o(.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb) refers to driver_gpio.o(.rodata._ZN6Driver9RegistersL11RCC_APB2ENRE) for Driver::Registers::RCC_APB2ENR
+    driver_gpio.o(.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb) refers to driver_gpio.o(.text._ZNKSt3__25arrayIjLj5EEixB6v16000Ej) for std::__2::array<unsigned int, 5u>::operator[][abi:v16000](unsigned int) const
+    driver_gpio.o(.ARM.exidx.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb) refers to driver_gpio.o(.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb) for [Anonymous Symbol]
+    driver_gpio.o(.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE) refers to driver_gpio.o(.data._ZN6Driver9RegistersL6GPIO_xE) for Driver::Registers::GPIO_x
+    driver_gpio.o(.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE) refers to driver_gpio.o(.text._ZNSt3__25arrayIP12GPIO_TypeDefLj5EEixB6v16000Ej) for std::__2::array<GPIO_TypeDef*, 5u>::operator[][abi:v16000](unsigned int)
+    driver_gpio.o(.ARM.exidx.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE) refers to driver_gpio.o(.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE) for [Anonymous Symbol]
     startup_stm32f10x_md.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
     startup_stm32f10x_md.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
     startup_stm32f10x_md.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
@@ -130,14 +136,8 @@ Section Cross References
     defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
     defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
     defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
-    main.o(.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb) refers to main.o(.rodata._ZN6Driver9RegistersL11RCC_APB2ENRE) for Driver::Registers::RCC_APB2ENR
-    main.o(.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb) refers to main.o(.text._ZNKSt3__25arrayIjLj5EEixB6v16000Ej) for std::__2::array<unsigned int, 5u>::operator[][abi:v16000](unsigned int) const
-    main.o(.ARM.exidx.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb) refers to main.o(.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb) for [Anonymous Symbol]
-    main.o(.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE) refers to main.o(.data._ZN6Driver9RegistersL6GPIO_xE) for Driver::Registers::GPIO_x
-    main.o(.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE) refers to main.o(.text._ZNSt3__25arrayIP12GPIO_TypeDefLj5EEixB6v16000Ej) for std::__2::array<GPIO_TypeDef*, 5u>::operator[][abi:v16000](unsigned int)
-    main.o(.ARM.exidx.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE) refers to main.o(.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE) for [Anonymous Symbol]
-    main.o(.ARM.exidx.text._ZNKSt3__25arrayIjLj5EEixB6v16000Ej) refers to main.o(.text._ZNKSt3__25arrayIjLj5EEixB6v16000Ej) for [Anonymous Symbol]
-    main.o(.ARM.exidx.text._ZNSt3__25arrayIP12GPIO_TypeDefLj5EEixB6v16000Ej) refers to main.o(.text._ZNSt3__25arrayIP12GPIO_TypeDefLj5EEixB6v16000Ej) for [Anonymous Symbol]
+    driver_gpio.o(.ARM.exidx.text._ZNKSt3__25arrayIjLj5EEixB6v16000Ej) refers to driver_gpio.o(.text._ZNKSt3__25arrayIjLj5EEixB6v16000Ej) for [Anonymous Symbol]
+    driver_gpio.o(.ARM.exidx.text._ZNSt3__25arrayIP12GPIO_TypeDefLj5EEixB6v16000Ej) refers to driver_gpio.o(.text._ZNSt3__25arrayIP12GPIO_TypeDefLj5EEixB6v16000Ej) for [Anonymous Symbol]
 
 
 ==============================================================================
@@ -147,6 +147,9 @@ Removing Unused input sections from the image.
     Removing main.o(.text), (0 bytes).
     Removing main.o(.ARM.exidx.text.main), (8 bytes).
     Removing main.o(.ARM.use_no_argv), (4 bytes).
+    Removing driver_gpio.o(.text), (0 bytes).
+    Removing driver_gpio.o(.ARM.exidx.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb), (8 bytes).
+    Removing driver_gpio.o(.ARM.exidx.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE), (8 bytes).
     Removing system_stm32f10x.o(.text), (0 bytes).
     Removing system_stm32f10x.o(.ARM.exidx.text.SystemInit), (8 bytes).
     Removing system_stm32f10x.o(.ARM.exidx.text.SetSysClock), (8 bytes).
@@ -155,12 +158,10 @@ Removing Unused input sections from the image.
     Removing system_stm32f10x.o(.ARM.exidx.text.SetSysClockTo72), (8 bytes).
     Removing system_stm32f10x.o(.data.SystemCoreClock), (4 bytes).
     Removing system_stm32f10x.o(.rodata.AHBPrescTable), (16 bytes).
-    Removing main.o(.ARM.exidx.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb), (8 bytes).
-    Removing main.o(.ARM.exidx.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE), (8 bytes).
-    Removing main.o(.ARM.exidx.text._ZNKSt3__25arrayIjLj5EEixB6v16000Ej), (8 bytes).
-    Removing main.o(.ARM.exidx.text._ZNSt3__25arrayIP12GPIO_TypeDefLj5EEixB6v16000Ej), (8 bytes).
+    Removing driver_gpio.o(.ARM.exidx.text._ZNKSt3__25arrayIjLj5EEixB6v16000Ej), (8 bytes).
+    Removing driver_gpio.o(.ARM.exidx.text._ZNSt3__25arrayIP12GPIO_TypeDefLj5EEixB6v16000Ej), (8 bytes).
 
-15 unused section(s) (total 386 bytes) removed from the image.
+16 unused section(s) (total 386 bytes) removed from the image.
 
 ==============================================================================
 
@@ -222,6 +223,7 @@ Image Symbol Table
     ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
     ../fplib/fpinit.s                        0x00000000   Number         0  fpinit.o ABSOLUTE
     ../fplib/fpinit_empty.s                  0x00000000   Number         0  fpinit_empty.o ABSOLUTE
+    Driver_GPIO.cpp                          0x00000000   Number         0  driver_gpio.o ABSOLUTE
     RTE/Device/STM32F103C8/startup_stm32f10x_md.s 0x00000000   Number         0  startup_stm32f10x_md.o ABSOLUTE
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
     main.cpp                                 0x00000000   Number         0  main.o ABSOLUTE
@@ -286,15 +288,15 @@ Image Symbol Table
     SetSysClockTo72                          0x0800024d   Thumb Code   290  system_stm32f10x.o(.text.SetSysClockTo72)
     [Anonymous Symbol]                       0x0800024c   Section        0  system_stm32f10x.o(.text.SetSysClockTo72)
     [Anonymous Symbol]                       0x08000370   Section        0  system_stm32f10x.o(.text.SystemInit)
-    [Anonymous Symbol]                       0x080003d8   Section        0  main.o(.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb)
-    [Anonymous Symbol]                       0x08000438   Section        0  main.o(.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE)
-    [Anonymous Symbol]                       0x08000880   Section        0  main.o(.text._ZNKSt3__25arrayIjLj5EEixB6v16000Ej)
-    [Anonymous Symbol]                       0x08000894   Section        0  main.o(.text._ZNSt3__25arrayIP12GPIO_TypeDefLj5EEixB6v16000Ej)
+    [Anonymous Symbol]                       0x080003d8   Section        0  driver_gpio.o(.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb)
+    [Anonymous Symbol]                       0x08000438   Section        0  driver_gpio.o(.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE)
+    [Anonymous Symbol]                       0x08000880   Section        0  driver_gpio.o(.text._ZNKSt3__25arrayIjLj5EEixB6v16000Ej)
+    [Anonymous Symbol]                       0x08000894   Section        0  driver_gpio.o(.text._ZNSt3__25arrayIP12GPIO_TypeDefLj5EEixB6v16000Ej)
     [Anonymous Symbol]                       0x080008a8   Section        0  main.o(.text.main)
-    Driver::Registers::RCC_APB2ENR           0x080008f4   Data          20  main.o(.rodata._ZN6Driver9RegistersL11RCC_APB2ENRE)
-    [Anonymous Symbol]                       0x080008f4   Section        0  main.o(.rodata._ZN6Driver9RegistersL11RCC_APB2ENRE)
-    Driver::Registers::GPIO_x                0x20000000   Data          20  main.o(.data._ZN6Driver9RegistersL6GPIO_xE)
-    [Anonymous Symbol]                       0x20000000   Section        0  main.o(.data._ZN6Driver9RegistersL6GPIO_xE)
+    Driver::Registers::RCC_APB2ENR           0x080008f4   Data          20  driver_gpio.o(.rodata._ZN6Driver9RegistersL11RCC_APB2ENRE)
+    [Anonymous Symbol]                       0x080008f4   Section        0  driver_gpio.o(.rodata._ZN6Driver9RegistersL11RCC_APB2ENRE)
+    Driver::Registers::GPIO_x                0x20000000   Data          20  driver_gpio.o(.data._ZN6Driver9RegistersL6GPIO_xE)
+    [Anonymous Symbol]                       0x20000000   Section        0  driver_gpio.o(.data._ZN6Driver9RegistersL6GPIO_xE)
     .bss                                     0x20000018   Section       96  libspace.o(.bss)
     Heap_Mem                                 0x20000078   Data         512  startup_stm32f10x_md.o(HEAP)
     HEAP                                     0x20000078   Section      512  startup_stm32f10x_md.o(HEAP)
@@ -456,10 +458,10 @@ Image Symbol Table
     __use_no_semihosting_swi                 0x08000241   Thumb Code     2  use_no_semi.o(.text)
     __semihosting_library_function           0x08000243   Thumb Code     0  indicate_semi.o(.text)
     SystemInit                               0x08000371   Thumb Code   102  system_stm32f10x.o(.text.SystemInit)
-    Driver::GPIO::GPIO_bus_enable(Driver::Structures::e_gpio_port_t, bool) 0x080003d9   Thumb Code    96  main.o(.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb)
-    Driver::GPIO::GPIO_set_direction(Driver::Structures::e_gpio_port_t, unsigned char, Driver::Structures::e_gpio_direction_t) 0x08000439   Thumb Code  1096  main.o(.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE)
-    std::__2::array<unsigned int, 5u>::operator[][abi:v16000](unsigned int) const 0x08000881   Thumb Code    18  main.o(.text._ZNKSt3__25arrayIjLj5EEixB6v16000Ej)
-    std::__2::array<GPIO_TypeDef*, 5u>::operator[][abi:v16000](unsigned int) 0x08000895   Thumb Code    18  main.o(.text._ZNSt3__25arrayIP12GPIO_TypeDefLj5EEixB6v16000Ej)
+    Driver::GPIO::GPIO_bus_enable(Driver::Structures::e_gpio_port_t, bool) 0x080003d9   Thumb Code    96  driver_gpio.o(.text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb)
+    Driver::GPIO::GPIO_set_direction(Driver::Structures::e_gpio_port_t, unsigned char, Driver::Structures::e_gpio_direction_t) 0x08000439   Thumb Code  1096  driver_gpio.o(.text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE)
+    std::__2::array<unsigned int, 5u>::operator[][abi:v16000](unsigned int) const 0x08000881   Thumb Code    18  driver_gpio.o(.text._ZNKSt3__25arrayIjLj5EEixB6v16000Ej)
+    std::__2::array<GPIO_TypeDef*, 5u>::operator[][abi:v16000](unsigned int) 0x08000895   Thumb Code    18  driver_gpio.o(.text._ZNSt3__25arrayIP12GPIO_TypeDefLj5EEixB6v16000Ej)
     main                                     0x080008a9   Thumb Code    74  main.o(.text.main)
     Region$$Table$$Base                      0x08000908   Number         0  anon$$obj.o(Region$$Table)
     Region$$Table$$Limit                     0x08000928   Number         0  anon$$obj.o(Region$$Table)
@@ -480,96 +482,96 @@ Memory Map of the image
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x08000000   0x08000000   0x000000ec   Data   RO           24    RESET               startup_stm32f10x_md.o
-    0x080000ec   0x080000ec   0x00000008   Code   RO           51  * !!!main             c_w.l(__main.o)
-    0x080000f4   0x080000f4   0x00000034   Code   RO          216    !!!scatter          c_w.l(__scatter.o)
-    0x08000128   0x08000128   0x0000001a   Code   RO          218    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x08000000   0x08000000   0x000000ec   Data   RO           30    RESET               startup_stm32f10x_md.o
+    0x080000ec   0x080000ec   0x00000008   Code   RO           57  * !!!main             c_w.l(__main.o)
+    0x080000f4   0x080000f4   0x00000034   Code   RO          222    !!!scatter          c_w.l(__scatter.o)
+    0x08000128   0x08000128   0x0000001a   Code   RO          224    !!handler_copy      c_w.l(__scatter_copy.o)
     0x08000142   0x08000142   0x00000002   PAD
-    0x08000144   0x08000144   0x0000001c   Code   RO          220    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x08000160   0x08000160   0x00000002   Code   RO           78    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x08000162   0x08000162   0x00000000   Code   RO           85    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO           87    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO           89    .ARM.Collect$$libinit$$00000006  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO           92    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO           94    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO           96    .ARM.Collect$$libinit$$00000010  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO           99    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          101    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          103    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          105    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          107    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          109    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          111    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          113    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          115    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          117    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          119    .ARM.Collect$$libinit$$00000027  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          123    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          125    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          127    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          129    .ARM.Collect$$libinit$$00000034  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000002   Code   RO          130    .ARM.Collect$$libinit$$00000035  c_w.l(libinit2.o)
-    0x08000164   0x08000164   0x00000002   Code   RO          152    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x08000166   0x08000166   0x00000000   Code   RO          167    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x08000166   0x08000166   0x00000000   Code   RO          169    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x08000166   0x08000166   0x00000000   Code   RO          172    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x08000166   0x08000166   0x00000000   Code   RO          175    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x08000166   0x08000166   0x00000000   Code   RO          177    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x08000166   0x08000166   0x00000000   Code   RO          180    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x08000166   0x08000166   0x00000002   Code   RO          181    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x08000168   0x08000168   0x00000000   Code   RO           53    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x08000168   0x08000168   0x00000000   Code   RO           55    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x08000168   0x08000168   0x00000006   Code   RO           67    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x0800016e   0x0800016e   0x00000000   Code   RO           57    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x0800016e   0x0800016e   0x00000004   Code   RO           58    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x08000172   0x08000172   0x00000000   Code   RO           60    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x08000172   0x08000172   0x00000008   Code   RO           61    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x0800017a   0x0800017a   0x00000002   Code   RO           82    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x0800017c   0x0800017c   0x00000000   Code   RO          132    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x0800017c   0x0800017c   0x00000004   Code   RO          133    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x08000180   0x08000180   0x00000006   Code   RO          134    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x08000144   0x08000144   0x0000001c   Code   RO          226    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x08000160   0x08000160   0x00000002   Code   RO           84    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x08000162   0x08000162   0x00000000   Code   RO           91    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO           93    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO           95    .ARM.Collect$$libinit$$00000006  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO           98    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          100    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          102    .ARM.Collect$$libinit$$00000010  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          105    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          107    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          109    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          111    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          113    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          115    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          117    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          119    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          121    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          123    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          125    .ARM.Collect$$libinit$$00000027  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          129    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          131    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          133    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          135    .ARM.Collect$$libinit$$00000034  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000002   Code   RO          136    .ARM.Collect$$libinit$$00000035  c_w.l(libinit2.o)
+    0x08000164   0x08000164   0x00000002   Code   RO          158    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x08000166   0x08000166   0x00000000   Code   RO          173    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x08000166   0x08000166   0x00000000   Code   RO          175    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x08000166   0x08000166   0x00000000   Code   RO          178    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x08000166   0x08000166   0x00000000   Code   RO          181    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x08000166   0x08000166   0x00000000   Code   RO          183    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x08000166   0x08000166   0x00000000   Code   RO          186    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x08000166   0x08000166   0x00000002   Code   RO          187    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x08000168   0x08000168   0x00000000   Code   RO           59    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x08000168   0x08000168   0x00000000   Code   RO           61    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x08000168   0x08000168   0x00000006   Code   RO           73    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x0800016e   0x0800016e   0x00000000   Code   RO           63    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x0800016e   0x0800016e   0x00000004   Code   RO           64    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x08000172   0x08000172   0x00000000   Code   RO           66    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x08000172   0x08000172   0x00000008   Code   RO           67    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x0800017a   0x0800017a   0x00000002   Code   RO           88    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x0800017c   0x0800017c   0x00000000   Code   RO          138    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x0800017c   0x0800017c   0x00000004   Code   RO          139    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x08000180   0x08000180   0x00000006   Code   RO          140    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x08000186   0x08000186   0x00000002   PAD
-    0x08000188   0x08000188   0x00000040   Code   RO           25  * .text               startup_stm32f10x_md.o
-    0x080001c8   0x080001c8   0x00000006   Code   RO           49    .text               c_w.l(heapauxi.o)
-    0x080001ce   0x080001ce   0x0000004a   Code   RO           69    .text               c_w.l(sys_stackheap_outer.o)
-    0x08000218   0x08000218   0x00000012   Code   RO           71    .text               c_w.l(exit.o)
+    0x08000188   0x08000188   0x00000040   Code   RO           31  * .text               startup_stm32f10x_md.o
+    0x080001c8   0x080001c8   0x00000006   Code   RO           55    .text               c_w.l(heapauxi.o)
+    0x080001ce   0x080001ce   0x0000004a   Code   RO           75    .text               c_w.l(sys_stackheap_outer.o)
+    0x08000218   0x08000218   0x00000012   Code   RO           77    .text               c_w.l(exit.o)
     0x0800022a   0x0800022a   0x00000002   PAD
-    0x0800022c   0x0800022c   0x00000008   Code   RO           79    .text               c_w.l(libspace.o)
-    0x08000234   0x08000234   0x0000000c   Code   RO          142    .text               c_w.l(sys_exit.o)
-    0x08000240   0x08000240   0x00000002   Code   RO          157    .text               c_w.l(use_no_semi.o)
-    0x08000242   0x08000242   0x00000000   Code   RO          159    .text               c_w.l(indicate_semi.o)
+    0x0800022c   0x0800022c   0x00000008   Code   RO           85    .text               c_w.l(libspace.o)
+    0x08000234   0x08000234   0x0000000c   Code   RO          148    .text               c_w.l(sys_exit.o)
+    0x08000240   0x08000240   0x00000002   Code   RO          163    .text               c_w.l(use_no_semi.o)
+    0x08000242   0x08000242   0x00000000   Code   RO          165    .text               c_w.l(indicate_semi.o)
     0x08000242   0x08000242   0x00000002   PAD
-    0x08000244   0x08000244   0x00000008   Code   RO           33    .text.SetSysClock   system_stm32f10x.o
-    0x0800024c   0x0800024c   0x00000122   Code   RO           37    .text.SetSysClockTo72  system_stm32f10x.o
+    0x08000244   0x08000244   0x00000008   Code   RO           39    .text.SetSysClock   system_stm32f10x.o
+    0x0800024c   0x0800024c   0x00000122   Code   RO           43    .text.SetSysClockTo72  system_stm32f10x.o
     0x0800036e   0x0800036e   0x00000002   PAD
-    0x08000370   0x08000370   0x00000066   Code   RO           31    .text.SystemInit    system_stm32f10x.o
+    0x08000370   0x08000370   0x00000066   Code   RO           37    .text.SystemInit    system_stm32f10x.o
     0x080003d6   0x080003d6   0x00000002   PAD
-    0x080003d8   0x080003d8   0x00000060   Code   RO           14    .text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb  main.o
-    0x08000438   0x08000438   0x00000448   Code   RO           16    .text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE  main.o
-    0x08000880   0x08000880   0x00000012   Code   RO           18    .text._ZNKSt3__25arrayIjLj5EEixB6v16000Ej  main.o
+    0x080003d8   0x080003d8   0x00000060   Code   RO           11    .text._ZN6Driver4GPIO15GPIO_bus_enableENS_10Structures13e_gpio_port_tEb  driver_gpio.o
+    0x08000438   0x08000438   0x00000448   Code   RO           13    .text._ZN6Driver4GPIO18GPIO_set_directionENS_10Structures13e_gpio_port_tEhNS1_18e_gpio_direction_tE  driver_gpio.o
+    0x08000880   0x08000880   0x00000012   Code   RO           24    .text._ZNKSt3__25arrayIjLj5EEixB6v16000Ej  driver_gpio.o
     0x08000892   0x08000892   0x00000002   PAD
-    0x08000894   0x08000894   0x00000012   Code   RO           20    .text._ZNSt3__25arrayIP12GPIO_TypeDefLj5EEixB6v16000Ej  main.o
+    0x08000894   0x08000894   0x00000012   Code   RO           26    .text._ZNSt3__25arrayIP12GPIO_TypeDefLj5EEixB6v16000Ej  driver_gpio.o
     0x080008a6   0x080008a6   0x00000002   PAD
     0x080008a8   0x080008a8   0x0000004a   Code   RO            2    .text.main          main.o
     0x080008f2   0x080008f2   0x00000002   PAD
-    0x080008f4   0x080008f4   0x00000014   Data   RO            4    .rodata._ZN6Driver9RegistersL11RCC_APB2ENRE  main.o
-    0x08000908   0x08000908   0x00000020   Data   RO          215    Region$$Table       anon$$obj.o
+    0x080008f4   0x080008f4   0x00000014   Data   RO           15    .rodata._ZN6Driver9RegistersL11RCC_APB2ENRE  driver_gpio.o
+    0x08000908   0x08000908   0x00000020   Data   RO          221    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000928, Size: 0x00000014, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08000928   0x00000014   Data   RW            5    .data._ZN6Driver9RegistersL6GPIO_xE  main.o
+    0x20000000   0x08000928   0x00000014   Data   RW           16    .data._ZN6Driver9RegistersL6GPIO_xE  driver_gpio.o
 
 
     Execution Region ER_ZI (Exec base: 0x20000018, Load base: 0x0800093c, Size: 0x00000660, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000018        -       0x00000060   Zero   RW           80    .bss                c_w.l(libspace.o)
-    0x20000078        -       0x00000200   Zero   RW           23    HEAP                startup_stm32f10x_md.o
-    0x20000278        -       0x00000400   Zero   RW           22    STACK               startup_stm32f10x_md.o
+    0x20000018        -       0x00000060   Zero   RW           86    .bss                c_w.l(libspace.o)
+    0x20000078        -       0x00000200   Zero   RW           29    HEAP                startup_stm32f10x_md.o
+    0x20000278        -       0x00000400   Zero   RW           28    STACK               startup_stm32f10x_md.o
 
 
 ==============================================================================
@@ -579,12 +581,13 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      1302          0         20         20          0      26309   main.o
+      1228          0         20         20          0      26237   driver_gpio.o
+        74          0          0          0          0      19755   main.o
         64         26        236          0       1536        852   startup_stm32f10x_md.o
-       400          0          0          0          0       2879   system_stm32f10x.o
+       400          0          0          0          0       2890   system_stm32f10x.o
 
     ----------------------------------------------------------------------
-      1776         26        288         20       1536      30040   Object Totals
+      1776         26        288         20       1536      49734   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         10          0          0          0          0          0   (incl. Padding)
 
@@ -633,8 +636,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2056         42        288         20       1632      30496   Grand Totals
-      2056         42        288         20       1632      30496   ELF Image Totals
+      2056         42        288         20       1632      50170   Grand Totals
+      2056         42        288         20       1632      50170   ELF Image Totals
       2056         42        288         20          0          0   ROM Totals
 
 ==============================================================================

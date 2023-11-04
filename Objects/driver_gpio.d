@@ -1,4 +1,4 @@
-./objects/main.o: main.cpp \
+./objects/driver_gpio.o: Driver\Driver_GPIO.cpp Driver\Driver_GPIO.h \
   C:\Users\math_\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h \
   RTE\_STM32F103\RTE_Components.h \
   C:\Users\math_\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h \
@@ -549,5 +549,4 @@
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__memory\raw_storage_iterator.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__memory\shared_ptr.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__functional\reference_wrapper.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__functional\weak_result_type.h \
-  Driver\Driver_GPIO.h
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__functional\weak_result_type.h
